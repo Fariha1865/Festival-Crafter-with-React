@@ -2,40 +2,40 @@ import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
 import withAutoplay from 'react-awesome-slider/dist/autoplay'
 import leftCardOne from "../../assets/1.jpg"
-import leftCardTwo from "../../assets/2.jpg"
+import leftCardTwo from "../../assets/2.png"
 import leftCardThree from "../../assets/3.jpg"
 import leftCardFour from "../../assets/4.jpg"
 import leftCardFive from "../../assets/5.jpg"
-import leftCardSix from "../../assets/6.jpg"
+import leftCardSix from "../../assets/6.png"
 
 const AutoplaySlider = withAutoplay(AwesomeSlider)
 
 const sliderItems = [
     {
         src: leftCardOne,
-        text: "Flavorful Food Festivals, Seamless Management",
+        text: "Let us handle the feast: Your Food Festival, Our Expertise!",
     },
     {
         src: leftCardTwo,
-        text: "Experience Our Expert Fair Management Services",
+        text: "Fruitful Festivals Made Easy: Trust Our Event Management Team!",
     },
     {
         src: leftCardThree,
-        text: "Art Exhibition Management Experts",
+        text: "Warm Hearts, Cool Events: Winter Festival Coordination Excellence!",
     },
     {
         src: leftCardFour,
-        text: "Elevating Durga Puja Celebrations with Our Expertise",
+        text: "A Symphony of Creativity: Art & Music Festival Management Excellence!",
     },
     {
         src: leftCardFive,
-        text: "Eid Festivity Masters: Elevating Your Eid Celebrations",
+        text: "Turning Pages, Turning Heads: Choose Us for Book Festival Management!",
     },
     {
         src: leftCardSix,
-        text: "Mastering Victory Day Celebrations",
+        text: "Geek Out with Confidence: Technology Festival Coordination Excellence!",
     },
-    // Add more items as needed
+
 ];
 
 const Slider = () => {
