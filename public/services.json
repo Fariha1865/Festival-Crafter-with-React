@@ -1,36 +1,42 @@
 {
     "services": [
         {
+            "event_id": 1,
             "event_name": "Food Festival Management",
             "event_image": "https://i.ibb.co/jwWKLCm/food.jpg",
             "organizing_price": "25,000 BDT - 60,000 BDT",
             "description": "Experience a culinary journey like never before with our Food Festival Management services. From delectable menu planning to exquisite catering, food presentation, and engaging cooking classes, we ensure your food festival is a gastronomic delight."
         },
         {
+            "event_id": 2,
             "event_name": "Fruit Festival Management",
             "event_image": "https://i.ibb.co/tcFD4mj/fruit.jpg",
             "organizing_price": "22,000 BDT - 55,000 BDT",
             "description": "Join us in celebrating the sweetness of life with our Fruit Festival Management offerings. Our services include sourcing the freshest fruits, crafting stunning fruit arrangements, hosting interactive fruit tasting workshops, and organizing fun fruit-themed activities."
         },
         {
+            "event_id": 3,
             "event_name": "Winter Festival Management",
             "event_image": "https://i.ibb.co/hRnhm0L/winter.jpg",
             "organizing_price": "32,000 BDT - 68,000 BDT",
             "description": "Celebrate the wonders of winter with our Winter Festival Management. We offer a delightful winter experience, including traditional winter pithas, hearty winter foods, cozy winter clothing and accessories, and enchanting winter-themed activities for all ages."
         },
         {
+            "event_id": 4,
             "event_name": "Art and Music Festival Management",
             "event_image": "https://i.ibb.co/Nj5z0tM/art.jpg",
             "organizing_price": "30,000 BDT - 58,000 BDT",
             "description": "Immerse yourself in creativity with our Art and Music Festival Management expertise. From booking talented artists to creating captivating stage setups and hosting kids' art corners, we ensure your festival is a visual and auditory masterpiece."
         },
         {
+            "event_id": 5,
             "event_name": "Literature and Books Festival Management",
             "event_image": "https://i.ibb.co/z5FKjfX/book.jpg",
             "organizing_price": "27,000 BDT - 59,000 BDT",
             "description": "Step into the world of words with our Literature and Books Festival Management services. We facilitate author bookings, insightful panel discussions, engaging book fairs, enchanting storytelling sessions, and children's book swaps."
         },
         {
+            "event_id": 6,
             "event_name": "Science and Technology Festival Management",
             "event_image": "https://i.ibb.co/FxkFj0P/tech.jpg",
             "organizing_price": "26,000 BDT - 61,000 BDT",

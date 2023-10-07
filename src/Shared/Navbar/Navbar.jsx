@@ -33,9 +33,9 @@ const Navbar = () => {
                             {navLinks}
                         </ul>
                     </div>
-                   <h1 className="text-white font-mono text-xl font-bold bg-red-900 p-2 rounded-md">Cultural Crafter</h1>
+                   <h1 className="text-white font-mono text-xl font-bold bg-red-900 p-2 rounded-md italic">Festival Crafter</h1>
                 </div>
-                <div className="navbar-center hidden lg:flex">
+                <div className="navbar-center  hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {navLinks}
                     </ul>

@@ -1,8 +1,11 @@
+import { useLoaderData } from "react-router-dom";
 import Services from "./Services";
 import Slider from "./Slider";
 
 
 const Home = () => {
+
+    const services = useLoaderData();
     return (
         <div className="bg-[#411313] text-white">
             <div className="">
@@ -12,7 +15,7 @@ const Home = () => {
             {/* Services section */}
 
             <div className="mt-20">
-                <Services></Services>
+                <Services services={services}></Services>
 
             </div>
         </div>
