@@ -6,7 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './toast.css'
 import { GoogleAuthProvider, getAuth, signInWithPopup, updateProfile } from "firebase/auth";
 import app from "../../firebase.config";
-import { AiFillGoogleCircle} from "react-icons/ai"
+import { AiFillGoogleCircle } from "react-icons/ai"
 
 const successToast = (success) => {
 
@@ -39,16 +39,16 @@ const Register = () => {
 
     const handleGoogleSignIn = () => {
         signInWithPopup(auth, new GoogleAuthProvider())
-          .then((result) => {
-            const user = result.user;
-            console.log('Google Sign-In Successful:', user);
-            setUser(user);
-          })
-          .catch((error) => {
-            console.error('Google Sign-In Error:', error.message);
-           
-          });
-      };
+            .then((result) => {
+                const user = result.user;
+                console.log('Google Sign-In Successful:', user);
+                setUser(user);
+            })
+            .catch((error) => {
+                console.error('Google Sign-In Error:', error.message);
+
+            });
+    };
 
     const handleSignUpFormSubmit = e => {
         e.preventDefault();
@@ -121,11 +121,11 @@ const Register = () => {
 
     }
     return (
-        <>
-            <ToastContainer className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
-            <div className="max-w-xl mx-auto mt-20">
-                <div className="relative flex  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
-                    <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
+        <div className="bg-red-800">
+            <ToastContainer className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
+            <div className="max-w-xl mx-auto py-20 ">
+                <div className="relative flex  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-200">
+                    <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-[#752727] bg-clip-border text-white shadow-lg shadow-pink-500/40">
                         <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
                             Sign Up
                         </h3>
@@ -177,13 +177,13 @@ const Register = () => {
                         </div>
 
                         {
-                            errorMessage && <p className="ml-20 mb-5 text-red-800">{errorMessage}</p>
+                            errorMessage && <p className="ml-20 mb-5 text-red-800 font-bold">{errorMessage}</p>
                         }
                         {
-                            successMessage && <p className="ml-20 mb-5 text-red-800">{successMessage}</p>
+                            successMessage && <p className="ml-20 mb-5 text-green-800 font-bold">{successMessage}</p>
                         }
                         <div className="p-6 pt-0">
-                            <input type="submit" value="Sign Up" className="block w-full select-none rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+                            <input type="submit" value="Sign Up" className="block w-full select-none rounded-lg bg-[#752727] py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             />
 
 
@@ -192,7 +192,7 @@ const Register = () => {
                                 <Link to="/login"
 
 
-                                    className="ml-1 block font-sans text-sm font-bold leading-normal text-pink-500 antialiased"
+                                    className="ml-1 block font-sans text-sm font-bold leading-normal text-[#752727] antialiased"
                                 >
                                     Sign In
                                 </Link>
@@ -203,17 +203,17 @@ const Register = () => {
 
 
                     </form>
-                    <div className="cursor-pointer mt-5 flex justify-center items-center gap-2 w-56 py-2 border border-black rounded-t-lg">
-                    <AiFillGoogleCircle></AiFillGoogleCircle>
-                    <h1>Login with Google</h1>
-                </div>
+                    <div className="flex justify-center mb-10">
+                        <div onClick={handleGoogleSignIn} className="bg-red-800 text-white cursor-pointer mt-5 flex justify-center items-center gap-2 w-56 py-2 border border-black rounded-t-lg">
+                            <AiFillGoogleCircle></AiFillGoogleCircle>
+                            <h1>Login with Google</h1>
+                        </div>
+                    </div>
 
-                    <button onClick={handleGoogleSignIn} className="btn">
-                        Google Login
-                    </button>
+
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 
