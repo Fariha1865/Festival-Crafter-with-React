@@ -4,6 +4,8 @@ import 'aos/dist/aos.css';
 const UpcomingEvents = () => {
     useEffect(() => {
         AOS.init({ duration: 1000 });
+       
+   
     }, []);
 
     return (
@@ -12,7 +14,7 @@ const UpcomingEvents = () => {
 
                 <div
                     className="card"
-                    data-aos="fade-left"
+                    data-aos="zoom-in"
                     data-aos-offset="100"
                 >
                     <div className='flex justify-end'>
@@ -29,7 +31,7 @@ const UpcomingEvents = () => {
 
                 <div
                     className="card"
-                    data-aos="fade-right"
+                    data-aos="zoom-in"
                     data-aos-offset="100"
                 >
                     <div className='flex'>
@@ -45,7 +47,7 @@ const UpcomingEvents = () => {
                 </div>
                 <div
                     className="card"
-                    data-aos="fade-left"
+                    data-aos="zoom-in"
                     data-aos-offset="100"
                 >
                     <div className='flex justify-end'>
