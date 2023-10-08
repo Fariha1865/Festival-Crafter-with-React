@@ -1,13 +1,16 @@
 import { useLoaderData } from "react-router-dom";
 import Services from "./Services";
 import Slider from "./Slider";
+import UpcomingEvents from "./UpcomingEvents.JSX";
+
+
 
 
 const Home = () => {
 
     const services = useLoaderData();
     return (
-        <div className="bg-[#411313] text-white">
+        <div className="bg-[#752727] text-white">
             <div className="">
                 <Slider></Slider>
             </div>
@@ -17,6 +20,10 @@ const Home = () => {
             <div className="mt-20">
                 <Services services={services}></Services>
 
+            </div>
+
+            <div>
+                 <UpcomingEvents></UpcomingEvents>
             </div>
         </div>
     );

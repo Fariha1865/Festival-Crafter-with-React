@@ -1,6 +1,10 @@
 import PropTypes from 'prop-types';
 import Service from './Service';
+
+
 const Services = ({ services }) => {
+
+    
 
     const allServices = services.services;
     console.log(services)
