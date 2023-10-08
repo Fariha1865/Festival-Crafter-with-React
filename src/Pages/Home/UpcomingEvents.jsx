@@ -8,7 +8,7 @@ const UpcomingEvents = () => {
 
     return (
         <div className='p-20'>
-            <h1 className="text-4xl font-bold text-center mb-16">Upcoming Events arranged by us</h1>
+            <h1 className="text-4xl font-bold text-center mb-16 italic font-mono">Upcoming Events arranged by us</h1>
 
                 <div
                     className="card"

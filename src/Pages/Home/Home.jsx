@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Services from "./Services";
 import Slider from "./Slider";
 import UpcomingEvents from "./UpcomingEvents.JSX";
+import Reviews from "./Reviews";
 
 
 
@@ -24,6 +25,10 @@ const Home = () => {
 
             <div>
                  <UpcomingEvents></UpcomingEvents>
+            </div>
+
+            <div>
+                 <Reviews></Reviews>
             </div>
         </div>
     );
