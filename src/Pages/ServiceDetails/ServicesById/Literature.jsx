@@ -106,7 +106,7 @@ const LiteratureBookFestival = () => {
                             </div>
                         </div>
                     </div>
-                    {/* Add more festival events as needed */}
+                 
                 </div>
             </div>
         </div>

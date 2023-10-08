@@ -4,6 +4,7 @@ import FoodFestival from "./ServicesById/Food";
 import WinterFestival from "./ServicesById/Winter";
 import Art_MusicFestival from "./ServicesById/Art_Music";
 import LiteratureBookFestival from "./ServicesById/Literature";
+import TechFestival from "./ServicesById/Tech";
 
 
 const ServiceDetails = () => {
@@ -19,7 +20,8 @@ const ServiceDetails = () => {
              id==="2" ? <FruitFestival></FruitFestival> :
              id==="3" ? <WinterFestival></WinterFestival> :
              id==="4" ? <Art_MusicFestival></Art_MusicFestival> :
-             id==="5" ? <LiteratureBookFestival></LiteratureBookFestival>:""
+             id==="5" ? <LiteratureBookFestival></LiteratureBookFestival>:
+             id==="6" ? <TechFestival></TechFestival>:""
           }
         </div>
     );
