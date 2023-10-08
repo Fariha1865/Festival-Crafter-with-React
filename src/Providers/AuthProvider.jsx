@@ -9,40 +9,40 @@ export const AuthContext = createContext(null);
 const AuthProvider = ({ children }) => {
 
 
-    const [loading,setLoading] = useState(true)
-    const [user,setUser] = useState(null);
+    const [loading, setLoading] = useState(true)
+    const [user, setUser] = useState(null);
     const auth = getAuth(app);
 
-    const createUser = (email,password)=>{
+    const createUser = (email, password) => {
         setLoading(true)
-        return createUserWithEmailAndPassword(auth,email,password)
+        return createUserWithEmailAndPassword(auth, email, password)
     }
 
-    useEffect(()=>{
-       const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-              setUser(currentUser)  
-              setLoading(false)
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser)
+            setLoading(false)
             //   console.log(user)     
         });
-        
 
-        return ()=>{
+
+        return () => {
             unSubscribe();
         }
-    },[auth,user])
+    }, [auth, user])
 
-    const logOut =()=>{
+    const logOut = () => {
         setLoading(true)
         return signOut(auth)
     }
-    const signIn = (email,password)=>{
+    const signIn = (email, password) => {
 
         setLoading(true)
-        return signInWithEmailAndPassword(auth,email,password);
+        return signInWithEmailAndPassword(auth, email, password);
     }
 
-    const authInfo ={
-        user ,
+    const authInfo = {
+        user,
         createUser,
         setUser,
         logOut,
@@ -57,7 +57,7 @@ const AuthProvider = ({ children }) => {
     );
 };
 
-AuthProvider.propTypes={
+AuthProvider.propTypes = {
     children: PropTypes.node
 }
 export default AuthProvider;

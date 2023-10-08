@@ -206,7 +206,7 @@ const Register = () => {
                     <div className="flex justify-center mb-10">
                         <div onClick={handleGoogleSignIn} className="bg-red-800 text-white cursor-pointer mt-5 flex justify-center items-center gap-2 w-56 py-2 border border-black rounded-t-lg">
                             <AiFillGoogleCircle></AiFillGoogleCircle>
-                            <h1>Login with Google</h1>
+                            <h1>Sign Up with Google</h1>
                         </div>
                     </div>
 

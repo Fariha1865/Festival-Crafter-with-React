@@ -17,6 +17,13 @@ const Login = () => {
             autoClose: 4000,
         })
     }
+    const successToast = (success) => {
+
+        toast.success(success, {
+            className: 'custom-toast',
+            autoClose: 4000,
+        })
+    }
 
     const {signIn} = useContext(AuthContext);
     const location = useLocation();
@@ -30,7 +37,11 @@ const Login = () => {
         signIn(email,password)
         .then(result=>{
             console.log(result.user)
-            navigate(location?.state? location.state : "/")
+            successToast(`  You have successfully logged in `)
+            setTimeout(function () {
+                navigate(location?.state? location.state : "/")
+            }, 2000);
+            
 
         })
         .catch(error=>{
@@ -52,6 +63,10 @@ const Login = () => {
                 const user = result.user;
                 console.log('Google Sign-In Successful:', user);
                 setUser(user);
+                successToast(`  You have successfully logged in `)
+                setTimeout(function () {
+                    navigate(location?.state? location.state : "/")
+                }, 2000);
             })
             .catch((error) => {
                 console.error('Google Sign-In Error:', error.message);
@@ -71,7 +86,7 @@ const Login = () => {
                             Sign In
                         </h3>
                     </div>
-                    <form onSubmit={handleSignInFormSubmit}>
+                    <form onSubmit={handleSignInFormSubmit} className="h-80">
                         <div className="flex flex-col gap-4 p-6">
                             <div className="relative h-11 w-full min-w-[200px]">
                                 <input type="email" name="email"
@@ -136,7 +151,7 @@ const Login = () => {
 
 
                             <p onClick={""} className="mt-3 cursor-pointer">Forgot Password ?</p>
-                            <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
+                            <p className="mt- flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
                                 Do not have an account?
                                 <Link to="/register"
 
@@ -149,7 +164,7 @@ const Login = () => {
                         </div>
 
                     </form>
-                    <div className="flex justify-center mb-10">
+                    <div className="flex justify-center mb-10 mt-3">
                         <div onClick={handleGoogleSignIn} className="bg-red-800 text-white cursor-pointer mt-5 flex justify-center items-center gap-2 w-56 py-2 border border-black rounded-t-lg">
                             <AiFillGoogleCircle></AiFillGoogleCircle>
                             <h1>Sign In with Google</h1>

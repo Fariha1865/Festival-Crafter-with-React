@@ -67,7 +67,7 @@ const TechFestival = () => {
                                         <li><strong className="font-semibold">Blockchain and Cryptocurrency Trends:</strong> A discussion on the latest in crypto. <span className='font-medium underline'>(Price Range: BDT 6,000 - BDT 9,000)</span></li>
                                         <li><strong className="font-semibold">Women in Tech Panel:</strong> Hear from women leading in tech. <span className='font-medium underline'>(Price Range: BDT 4,000 - BDT 7,000)</span></li>
                                         <li><strong className="font-semibold">Startup Success Stories:</strong> Learn from successful tech entrepreneurs. <span className='font-medium underline'>(Price Range: BDT 5,000 - BDT 8,000)</span></li>
-                                        <li><strong className="font-semibold">Tech for Social Good:</strong> Discuss tech's impact on society. <span className='font-medium underline'>(Price Range: BDT 4,000 - BDT 7,000)</span></li>
+                                        <li><strong className="font-semibold">Tech for Social Good:</strong> Discuss techs impact on society. <span className='font-medium underline'>(Price Range: BDT 4,000 - BDT 7,000)</span></li>
                                     </ul>
                                 </div>
                             </div>
