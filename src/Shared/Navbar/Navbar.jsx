@@ -19,7 +19,7 @@ const Navbar = () => {
             <NavLink to="/">Home</NavLink>
             <NavLink to="/gallery">Gallery</NavLink>
             <NavLink to="/contact">Contact</NavLink>
-            <NavLink to="/About">About Us</NavLink>
+            <NavLink to="/about">About Us</NavLink>
         </div>
     </>
     return (

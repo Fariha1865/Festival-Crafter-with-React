@@ -26,7 +26,7 @@ const Contact = () => {
     }
 
     return (
-        <div className="bg-[#752727] flex flex-col lg:flex-row gap-20">
+        <div className="bg-[#752727] flex flex-col lg:flex-row ">
              <ToastContainer className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
             <div className="card lg:card-side bg-base-100 shadow-xl lg:w-1/2">
                 <figure><img src={plan} alt="Movie"/></figure>
