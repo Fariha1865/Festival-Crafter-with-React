@@ -4,7 +4,9 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './toast.css'
-import { updateProfile } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup, updateProfile } from "firebase/auth";
+import app from "../../firebase.config";
+import { AiFillGoogleCircle} from "react-icons/ai"
 
 const successToast = (success) => {
 
@@ -32,6 +34,22 @@ const Register = () => {
 
 
     const { createUser } = useContext(AuthContext)
+    const auth = getAuth(app);
+    const { setUser } = useContext(AuthContext);
+
+    const handleGoogleSignIn = () => {
+        signInWithPopup(auth, new GoogleAuthProvider())
+          .then((result) => {
+            const user = result.user;
+            console.log('Google Sign-In Successful:', user);
+            setUser(user);
+          })
+          .catch((error) => {
+            console.error('Google Sign-In Error:', error.message);
+           
+          });
+      };
+
     const handleSignUpFormSubmit = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget)
@@ -51,10 +69,14 @@ const Register = () => {
             errorToast("Password cannot be less that 6 characters")
             return;
 
+
         }
-        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]/.test(password)) {
+
+
+
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).{8,}$/.test(password)) {
             errorToast("password must have: At-least one small letter, At-least one capital letter and At-least one digit")
-            setErrorMessage(`password must have: At-least one small letter, At-least one capital letter and At-least one digit`);
+            setErrorMessage(`password must have: At-least one small letter, At-least one capital letter and At-least one special character`);
             return;
         }
         if (!acceptedState) {
@@ -73,7 +95,7 @@ const Register = () => {
             .then(Result => {
                 console.log(Result.user)
                 setSuccessMessage("You have successfully registered")
-               
+
 
                 updateProfile(Result.user, {
                     displayName: name,
@@ -81,19 +103,21 @@ const Register = () => {
 
                 })
 
-             
+
                 successToast(`  You have successfully registered `)
-                setTimeout(function(){
+                setTimeout(function () {
                     window.location.reload();
-                 }, 2000);
+                }, 2000);
 
             })
 
-            .catch(error => { console.log(error.message) 
+            .catch(error => {
+                console.log(error.message)
 
                 errorToast(error.message)
-            
+
             })
+
 
     }
     return (
@@ -152,12 +176,17 @@ const Register = () => {
 
                         </div>
 
+                        {
+                            errorMessage && <p className="ml-20 mb-5 text-red-800">{errorMessage}</p>
+                        }
+                        {
+                            successMessage && <p className="ml-20 mb-5 text-red-800">{successMessage}</p>
+                        }
                         <div className="p-6 pt-0">
                             <input type="submit" value="Sign Up" className="block w-full select-none rounded-lg bg-gradient-to-tr from-pink-600 to-pink-400 py-3 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-pink-500/20 transition-all hover:shadow-lg hover:shadow-pink-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
                             />
 
 
-                            <p onClick={""} className="mt-3 cursor-pointer">Forgot Password ?</p>
                             <p className="mt-6 flex justify-center font-sans text-sm font-light leading-normal text-inherit antialiased">
                                 Already have an account?
                                 <Link to="/login"
@@ -170,15 +199,18 @@ const Register = () => {
                             </p>
                         </div>
 
-                        {
-                            errorMessage && <p className="ml-20 mb-5 text-red-800">{errorMessage}</p>
-                        }
-                        {
-                            successMessage && <p className="ml-20 mb-5 text-red-800">{successMessage}</p>
-                        }
+
 
 
                     </form>
+                    <div className="cursor-pointer mt-5 flex justify-center items-center gap-2 w-56 py-2 border border-black rounded-t-lg">
+                    <AiFillGoogleCircle></AiFillGoogleCircle>
+                    <h1>Login with Google</h1>
+                </div>
+
+                    <button onClick={handleGoogleSignIn} className="btn">
+                        Google Login
+                    </button>
                 </div>
             </div>
         </>

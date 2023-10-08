@@ -53,7 +53,7 @@ const Navbar = () => {
 
                     {/* <Link to="/login" className="btn bg-red-900 hover:bg-red-700 text-white">Login</Link> */}
                     {
-                        user ? <button onClick={handleLogout} className="btn bg-red-900 hover:bg-red-700 text-white">Sign Out</button> : <Link to="/login" className="btn bg-red-900 hover:bg-red-700 text-white">Login</Link>
+                        user ? <button onClick={handleLogout} className="btn bg-red-900 hover:bg-red-700 text-white">Sign Out</button> : <div><Link to="/login" className="btn bg-red-900 hover:bg-red-700 text-white">Login</Link> <Link to="/register" className="btn bg-red-900 hover:bg-red-700 text-white">Register</Link></div>
                     }
                 </div>
             </div>
