@@ -4,11 +4,12 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './toast.css'
+import { updateProfile } from "firebase/auth";
 
 const successToast = (success) => {
 
-    
-   
+
+
     toast.success(success, {
         className: 'custom-toast',
         autoClose: 4000,
@@ -36,6 +37,8 @@ const Register = () => {
         const form = new FormData(e.currentTarget)
         const email = form.get("email");
         const password = form.get("pass");
+        const name = form.get("name");
+        const photo = form.get("photo");
 
         setAcceptedState(e.target.terms.checked);
 
@@ -45,14 +48,17 @@ const Register = () => {
         if (password.length < 6) {
 
             setErrorMessage("Password cannot be less that 6 characters");
+            errorToast("Password cannot be less that 6 characters")
             return;
 
         }
         if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]/.test(password)) {
+            errorToast("password must have: At-least one small letter, At-least one capital letter and At-least one digit")
             setErrorMessage(`password must have: At-least one small letter, At-least one capital letter and At-least one digit`);
             return;
         }
         if (!acceptedState) {
+            errorToast("Please accept terms and conditions")
             setErrorMessage("Please accept terms and conditions");
             return;
         }
@@ -60,14 +66,39 @@ const Register = () => {
 
         e.target.email.value = "";
         e.target.pass.value = "";
+        e.target.name.value = "";
+        e.target.photo.value = "";
 
         createUser(email, password)
-            .then(Result => console.log(Result.user))
-            .catch(error => { console.log(error.message) })
+            .then(Result => {
+                console.log(Result.user)
+                setSuccessMessage("You have successfully registered")
+               
+
+                updateProfile(Result.user, {
+                    displayName: name,
+                    photoURL: photo
+
+                })
+
+             
+                successToast(`  You have successfully registered `)
+                setTimeout(function(){
+                    window.location.reload();
+                 }, 2000);
+
+            })
+
+            .catch(error => { console.log(error.message) 
+
+                errorToast(error.message)
+            
+            })
 
     }
     return (
         <>
+            <ToastContainer className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" />
             <div className="max-w-xl mx-auto mt-20">
                 <div className="relative flex  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                     <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-pink-600 to-pink-400 bg-clip-border text-white shadow-lg shadow-pink-500/40">
@@ -77,6 +108,24 @@ const Register = () => {
                     </div>
                     <form onSubmit={handleSignUpFormSubmit}>
                         <div className="flex flex-col gap-4 p-6">
+                            <div className="relative h-11 w-full min-w-[200px]">
+                                <input type="text" name="name"
+                                    className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+
+                                />
+                                <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                    Username
+                                </label>
+                            </div>
+                            <div className="relative h-11 w-full min-w-[200px]">
+                                <input type="text" name="photo"
+                                    className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
+
+                                />
+                                <label className="before:content[' '] after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-[11px] font-normal leading-tight text-blue-gray-400 transition-all before:pointer-events-none before:mt-[6.5px] before:mr-1 before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-t before:border-l before:border-blue-gray-200 before:transition-all after:pointer-events-none after:mt-[6.5px] after:ml-1 after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-t after:border-r after:border-blue-gray-200 after:transition-all peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.1] peer-placeholder-shown:text-blue-gray-500 peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-pink-500 peer-focus:before:border-t-2 peer-focus:before:border-l-2 peer-focus:before:!border-pink-500 peer-focus:after:border-t-2 peer-focus:after:border-r-2 peer-focus:after:!border-pink-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500">
+                                    Photo URL
+                                </label>
+                            </div>
                             <div className="relative h-11 w-full min-w-[200px]">
                                 <input type="email" name="email"
                                     className="peer h-full w-full rounded-md border border-blue-gray-200 border-t-transparent bg-transparent px-3 py-3 font-sans text-sm font-normal text-blue-gray-700 outline outline-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 focus:border-2 focus:border-pink-500 focus:border-t-transparent focus:outline-0 disabled:border-0 disabled:bg-blue-gray-50"
@@ -125,7 +174,7 @@ const Register = () => {
                             errorMessage && <p className="ml-20 mb-5 text-red-800">{errorMessage}</p>
                         }
                         {
-                            successMessage && successToast(`  You have successfully donated for ${successMessage}`)
+                            successMessage && <p className="ml-20 mb-5 text-red-800">{successMessage}</p>
                         }
 
 
