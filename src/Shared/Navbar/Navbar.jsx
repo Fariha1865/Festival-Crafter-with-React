@@ -1,16 +1,16 @@
 import { Link, NavLink } from "react-router-dom";
 import profileIcon from "../../assets/user.png"
-// import { useContext } from "react";
-// import { AuthContext } from "../../Providers/AuthProvider";
+import { useContext } from "react";
+import { AuthContext } from "../../Providers/AuthProvider";
 
 const Navbar = () => {
 
-    // const {user,logOut} = useContext(AuthContext);
-    // const handleLogout =()=>{
-    //       logOut()
-    //       .then()
-    //       .catch(error=>console.log(error.message))
-    // }
+    const {user,logOut} = useContext(AuthContext);
+    const handleLogout =()=>{
+          logOut()
+          .then()
+          .catch(error=>console.log(error.message))
+    }
     const navLinks = <>
 
     
@@ -47,10 +47,10 @@ const Navbar = () => {
                         </div>
                     </label>
 
-                    <Link to="/login" className="btn bg-red-900 hover:bg-red-700 text-white">Login</Link>
-                    {/* {
-                        user? <button onClick={handleLogout} className="btn button-Primary">Sign Out</button> : <Link to="/login" className="btn btn-neutral">Login</Link>
-                    } */}
+                    {/* <Link to="/login" className="btn bg-red-900 hover:bg-red-700 text-white">Login</Link> */}
+                    {
+                        user? <button onClick={handleLogout} className="btn bg-red-900 hover:bg-red-700 text-white">Sign Out</button> : <Link to="/login" className="btn bg-red-900 hover:bg-red-700 text-white">Login</Link>
+                    }
                 </div>
             </div>
         </div>
