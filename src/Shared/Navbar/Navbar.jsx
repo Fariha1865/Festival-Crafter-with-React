@@ -11,6 +11,7 @@ const Navbar = () => {
             .then()
             .catch(error => console.log(error.message))
     }
+
     const navLinks = <>
 
 
