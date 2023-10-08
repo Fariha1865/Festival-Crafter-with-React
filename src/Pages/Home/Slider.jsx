@@ -43,7 +43,7 @@ const Slider = () => {
         <div >
 
 
-            <AutoplaySlider className='h-[500px]'
+            <AutoplaySlider className='h-[500px] mt-20 lg:mt-0'
 
                 play
                 cancelOnInteraction={false}
