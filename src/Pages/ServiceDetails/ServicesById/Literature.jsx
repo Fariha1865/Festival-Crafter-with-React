@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 
 const LiteratureBookFestival = () => {
     useEffect(() => {
@@ -108,6 +109,9 @@ const LiteratureBookFestival = () => {
                     </div>
                  
                 </div>
+            </div>
+            <div className="flex justify-center mb-5">
+                <Link to="/contact"><button className="btn bg-red-900 hover:bg-red-700 text-white">For Booking,Contact Us</button></Link>
             </div>
         </div>
     );
