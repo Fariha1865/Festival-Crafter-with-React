@@ -4,13 +4,15 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
+console.log("inside firebase",import.meta.env.VITE_PASS)
 const firebaseConfig = {
-  apiKey: "AIzaSyDCkLDd6JMZjIg-RZ3MiEDTUOsVnp4dlzg",
-  authDomain: "festival-event-managemen-2c60d.firebaseapp.com",
-  projectId: "festival-event-managemen-2c60d",
-  storageBucket: "festival-event-managemen-2c60d.appspot.com",
-  messagingSenderId: "680866717982",
-  appId: "1:680866717982:web:7b7cb5f670b310df21e90f"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId:import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
