@@ -24,7 +24,7 @@ const FruitFestival = () => {
                 <h2 className="text-2xl font-semibold mb-10 mt-20 italic">Our Fruit Festival Events Planning and Management Services:</h2>
 
                 <div className='p-10'>
-                    <div className="card mb-10" data-aos="fade-right">
+                    <div className="card mb-10" data-aos="zoom-in">
                         <div className='flex'>
                             <div className="card w-[700px] text-black bg-base-100 shadow-xl">
                                 <div className="card-body">
@@ -39,7 +39,7 @@ const FruitFestival = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card mb-10" data-aos="fade-left">
+                    <div className="card mb-10" data-aos="zoom-in">
                         <div className='flex justify-end'>
                             <div className="card w-[700px] text-black bg-base-100 shadow-xl">
                                 <div className="card-body">
@@ -54,7 +54,7 @@ const FruitFestival = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card mb-10" data-aos="fade-right">
+                    <div className="card mb-10" data-aos="zoom-in">
                         <div className='flex'>
                             <div className="card w-[700px] text-black bg-base-100 shadow-xl">
                                 <div className="card-body">
@@ -68,7 +68,7 @@ const FruitFestival = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="card mb-10" data-aos="fade-left">
+                    <div className="card mb-10" data-aos="zoom-in">
                         <div className='flex justify-end'>
                             <div className="card w-[700px] text-black bg-base-100 shadow-xl">
                                 <div className="card-body">

@@ -11,6 +11,8 @@ import Contact from "../Pages/Contact/Contact";
 import Gallery from "../Pages/Gallery/Gallery";
 import AboutUs from "../Pages/AboutUs/AboutUs";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateContactRoute from "./PrivateContactRoute";
+import PrivateGalleryRoute from "./PrivateGalleryRoute";
 
 const router = createBrowserRouter([
   {
@@ -37,11 +39,11 @@ const router = createBrowserRouter([
          },
          {
             path:"/contact",
-            element: <PrivateRoute><Contact></Contact></PrivateRoute>
+            element: <PrivateContactRoute><Contact></Contact></PrivateContactRoute>
          },
          {
             path:"/gallery",
-            element: <PrivateRoute><Gallery></Gallery></PrivateRoute>
+            element: <PrivateGalleryRoute><Gallery></Gallery></PrivateGalleryRoute>
          },
          {
             path:"/about",

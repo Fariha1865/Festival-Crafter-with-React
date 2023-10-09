@@ -11,6 +11,7 @@ const Navbar = () => {
             .then()
             .catch(error => console.log(error.message))
     }
+    console.log(user?.photoURL)
 
     const navLinks = <>
 
@@ -45,14 +46,16 @@ const Navbar = () => {
                     <label tabIndex={0} className="btn btn-ghost btn-circle avatar mr-1">
                         <div className="w-10 rounded-full">
                             {
-                                user?.photoURL ? <img src={user.photoURL} /> : <img src={profileIcon} />
+                                user?.photoURL ? <img src={user?.photoURL} /> : <img src={profileIcon} />
+                                
+                                
                             }
 
                         </div>
 
                     </label>
                     {
-                        user?.displayName ? <h1 className="text-white mr-3">{user.displayName}</h1> : "" 
+                        user?.displayName ? <h1 className="text-white mr-3">{user?.displayName}</h1> : "" 
                     }
 
 

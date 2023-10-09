@@ -79,7 +79,7 @@ const Login = () => {
 
     return (
         <div className="bg-red-800">
-            <div className="max-w-xl mx-auto py-20">
+            <div className="max-w-xl mx-auto py-20 px-5">
                 <ToastContainer className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 " />
                 <div className="relative flex  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-lg shadow-gray-200">
                     <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-[#752727] bg-clip-border text-white shadow-lg shadow-pink-500/40">
