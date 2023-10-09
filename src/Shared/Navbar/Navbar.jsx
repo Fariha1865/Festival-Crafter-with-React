@@ -15,7 +15,7 @@ const Navbar = () => {
     const navLinks = <>
 
 
-        <div className="flex gap-5 lg:gap-10 md:text-black text-white font-bold  flex-col lg:flex-row">
+        <div className="flex gap-5 lg:gap-10 md:text-black text-white lg:text-white font-bold  flex-col lg:flex-row">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/gallery">Gallery</NavLink>
             <NavLink to="/contact">Contact</NavLink>
