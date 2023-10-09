@@ -18,9 +18,12 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: {}
+#### Answer: A: {}
 
-<i>In this code snippet, greetign is assigned with an empty object after it was declared. Here console.log is done after the empty object is assigned to the variable that's why the output here will be {}. But, if console.log was done right after declaring the varibale and before assigning the value, greetign is not defined error would have been given. </i>
+<i>In this code snippet, greetign is assigned with an empty object after it was declared.
+ Here console.log is done after the empty object is assigned to the variable. That's why 
+ the output here will be {}. But, if console.log was done right after declaring the variable
+ and before assigning the value, greetign is not defined error would have been given. </i>
 
 </p>
 </details>
@@ -43,9 +46,12 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C: "12"
 
-<i>Write your explanation here</i>
+<i>Here, among the two variables passsed, one is number and another is string.
+In this case, JavaScript will try to execute type correction when + operator is used.
+So, in this code, JavaScript will convert the number 1 to string type and then concat
+the two strings to produce the string "12."</i>
 
 </p>
 </details>
@@ -69,9 +75,13 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A: `['🍕', '🍫', '🥑', '🍔']`
 
-<i>Write your explanation here</i>
+<i>Here, Info object is created with it's favoriteFood property initialized
+ with the first element fo the food array. Later when the favoriteFood property
+ value is again re-assigned, it doesn't directly effect or have any impact on the
+ Food array. so the food array remains unchanged, only value of the info object > favoriteFood
+ property will be changed after the re-assignment</i>
 
 </p>
 </details>
